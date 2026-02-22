@@ -1,0 +1,169 @@
+/* style.css */
+
+/* 1. Global Setup - The "Vibe" */
+:root {
+    --primary-purple: #8e44ad;
+    --light-purple: #d7bde2;
+    --dark-purple: #2e0249;
+    --accent-pink: #f78fb3;
+    --glass-white: rgba(255, 255, 255, 0.8);
+    --neon-glow: 0 0 15px rgba(142, 68, 173, 0.5);
+}
+
+body {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7); /* Soft purple gradient */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    color: var(--dark-purple);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* 2. Navigation - Sticky & Aesthetic */
+nav {
+    background: var(--glass-white);
+    backdrop-filter: blur(10px);
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--light-purple);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--primary-purple);
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-pink);
+    text-shadow: var(--neon-glow);
+}
+
+/* 3. Dashboard/Index Buttons - Gen Z Style */
+.dash-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 2rem;
+}
+
+.sta-button {
+    background: white;
+    color: var(--primary-purple);
+    padding: 15px 30px;
+    border-radius: 50px; /* Super rounded */
+    text-decoration: none;
+    font-weight: 800;
+    width: 250px;
+    text-align: center;
+    border: 2px solid var(--primary-purple);
+    transition: all 0.3s ease;
+    box-shadow: 5px 5px 0px var(--primary-purple); /* Retro offset shadow */
+}
+
+.sta-button:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 8px 8px 0px var(--accent-pink);
+    background: var(--primary-purple);
+    color: white;
+}
+
+/* 4. Fashion Page - Polaroid Scrapbook */
+.scrapbook-paper {
+    display: grid;
+    /* This creates as many columns as will fit, each at least 300px wide */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 40px; /* Space between the Polaroids */
+    padding: 50px;
+    justify-items: center; /* Centers the Polaroids in their grid cells */
+}
+
+/* Ensure images don't overflow the Polaroid white background */
+.polaroid img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.polaroid {
+    background: white;
+    padding: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transform: rotate(-2deg); /* Slightly tilted for that "messy" look */
+    transition: 0.3s;
+}
+
+.polaroid:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.polaroid:hover {
+    transform: scale(1.05) rotate(0deg);
+    z-index: 10;
+}
+
+.polaroid img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #eee;
+}
+
+.polaroid p {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace; /* Handwriting vibe */
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* 5. Food & Services - Layouts */
+.Food-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.form-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid var(--light-purple);
+    border-radius: 10px;
+    background: #fdfbff;
+}
+
+button {
+    background: var(--primary-purple);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
